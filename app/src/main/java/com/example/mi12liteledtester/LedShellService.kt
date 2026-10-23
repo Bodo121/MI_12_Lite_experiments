@@ -8,7 +8,7 @@ class LedShellService : ILedShellService.Stub() {
         val commands = listOf(
             "id" to "/system/bin/id",
             "LED device names and permissions" to "/system/bin/ls -la /sys/class/leds",
-            "Potential front-flash interfaces" to "/system/bin/sh -c 'ls /sys/class/leds 2>/dev/null | grep -Ei "flash|torch|front|selfie|led"'",
+            "Potential front-flash interfaces" to "/system/bin/sh -c 'ls /sys/class/leds 2>/dev/null | grep -Ei \"flash|torch|front|selfie|led\"'",
             "Camera system service" to "/system/bin/sh -c 'cmd -l 2>/dev/null | grep -i camera'"
         )
         return commands.joinToString("\n\n") { (label, command) ->
