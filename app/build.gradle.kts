@@ -10,7 +10,7 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-    defaultConfig { applicationId = "com.example.mi12liteledtester"; minSdk = 26; targetSdk = 28; versionCode = 1; versionName = "1.0" }
+    defaultConfig { applicationId = "com.example.mi12liteledtester"; minSdk = 26; targetSdk = 28; versionCode = 2; versionName = "2.0" }
     signingConfigs {
         create("ciRelease") {
             val store = providers.gradleProperty("releaseStoreFile").orNull
