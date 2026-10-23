@@ -9,3 +9,8 @@ GitHub Actions -> Build Android APK -> Run workflow, or push to main. Download t
 Create a private Android signing keystore and add repository Actions secrets: KEYSTORE_BASE64 (base64 encoded keystore), KEYSTORE_PASSWORD, KEY_ALIAS, KEY_PASSWORD. Never commit your keystore or passwords.
 
 This is experimental: reported flash support does not guarantee torch access, independent LED control, or success during video calls.
+
+## Experimental Shizuku diagnostics
+The app now supports Shizuku 13+ via the official API + UserService. Start Shizuku on the phone (Wireless Debugging), open the new app build, tap **SHIZUKU: Connect / Request permission**, approve access in Shizuku, wait for `shell service connected`, then tap **SHIZUKU: Read-only LED diagnostics**. Copy the diagnostic output to help identify device LED nodes. This feature does not yet turn on the LEDs through Shizuku, change any kernel values, or bypass Android's camera-in-use restrictions.
+
+Both selfie LEDs were verified with the ordinary Camera2 torch API on camera ID 1 when the front camera is free. During WhatsApp video calls the camera is occupied, so torch activation may be rejected. A shell UID is not equivalent to root.
